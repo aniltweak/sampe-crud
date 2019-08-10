@@ -1,0 +1,11 @@
+{% for tt in tweak %}
+ <tr>
+     <td>{{ tt.title }}</td>
+     <td>{{ tt.price }}</td>
+     <td>{{ tt.course }}</td>
+     <td><a class="btn btn-info" href="{% url 'edit' book.id %}">Edit</a>
+     <a class="btn btn-danger" href="{% url 'delete' book.id %}">Delete</a>
+     </td>
+ </tr>
+{% endfor %}
+

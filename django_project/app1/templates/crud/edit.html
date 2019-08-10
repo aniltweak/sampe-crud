@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Edit course{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <div class="small_div">
+        <br>
+        <h2>Edit course</h2>
+        <hr>
+        <form action="{% url 'edit' tweak.id %}" method="POST">
+            {% csrf_token %}
+            <label class="form-group" for="title">Title: </label>
+            <input class="form-control" type="text" name="title" value="{{ tweak.title }}"><br>
+
+            <label class="form-group" for="price">Price: </label>
+            <input class="form-control" type="text" name="price" value="{{ tweak.price }}"><br>
+
+            <label class="
+                form-group" for="course">Course: </label>
+            <input class="form-control" type="text" name="course" value="{{ tweak.course }}"><br>
+
+            <label class="
+                form-group" for="timings">Timings: </label>
+            <input class="form-control" type="text" name="timings" value="{{ tweak.timings }}"><br>
+
+
+            <input class="
+                btn btn-success" type="submit" value="Update">
+
+        </form>
+        <br>
+
+    </div>
+</div>
+
+{% endblock content %}

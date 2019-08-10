@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock title %}
+{% block content %}
+
+<div class="container"><br>
+    <h2>TWEAKTALENT</h2>
+    <hr>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>TITLE</th>
+                <th>PRICE</th>
+                <th>COURSE</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for tweak in tweaks %}
+            <tr>
+                <td>{{ tweak.title }}</td>
+                <td>{{ tweak.price }}</td>
+                <td>{{ tweak.course }}</td>
+                <td>{{ tweak.timings }}</td>
+                <td><a class="btn btn-info" href="{% url 'edit' tweak.id %}">Edit</a>
+                    <a class="btn btn-danger" href="{% url 'delete' tweak.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="{% url 'add' %}">Add course</a>
+</div>
+
+{% endblock content %}
+
+
+</body>
+
+</html>
